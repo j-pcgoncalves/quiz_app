@@ -10,7 +10,7 @@ void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {
   void answerQuestion() {
-    print('Answer chosen!');
+    print('Answer 1 chosen!');
   }
 
   @override
@@ -19,6 +19,7 @@ class MyApp extends StatelessWidget {
       'What\s your favorite color?',
       'What\s your favorite animal?'
     ];
+
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(
@@ -27,8 +28,15 @@ class MyApp extends StatelessWidget {
         body: Column(children: [
           Text('The question!'),
           ElevatedButton(onPressed: answerQuestion, child: Text('Answer 1')),
-          ElevatedButton(onPressed: answerQuestion, child: Text('Answer 2')),
-          ElevatedButton(onPressed: answerQuestion, child: Text('Answer 3')),
+          ElevatedButton(
+              onPressed: () => print('Answer 2 chosen!'),
+              child: Text('Answer 2')),
+          ElevatedButton(
+              onPressed: () {
+                // ...
+                print('Answer 3 chosen!');
+              },
+              child: Text('Answer 3')),
         ]),
       ),
     );
